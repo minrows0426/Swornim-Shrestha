@@ -1,3 +1,5 @@
+
+
 /*===============
   global styles
 ===============*/
@@ -250,6 +252,20 @@ main {
   width: 1em;
 }
 
+
+/* ================================================== */
+/* == NEW STYLE FOR THE CIRCULAR PROFILE PICTURE === */
+/* ================================================== */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+  border: 3px solid var(--clr-primary);
+}
+
+
 .about {
   flex-direction: column;
   margin-top: 3em;
@@ -410,4 +426,32 @@ main {
   .scroll-container {
     display: none;
   }
+}
+
+/*=================================
+  NEW STYLES FOR SPATIAL TOOLS MAP
+=================================*/
+
+#map {
+    width: 100%;
+    height: 550px;
+    background-color: #eee;
+    margin-top: 2em;
+    box-shadow: var(--shadow);
+}
+
+.map-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1.5em;
+}
+
+.crosshair-cursor {
+    cursor: crosshair !important;
+}
+
+.leaflet-draw-toolbar a {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/images/spritesheet.png');
+    background-size: 270px 30px;
 }
