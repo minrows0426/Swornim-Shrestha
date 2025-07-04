@@ -263,6 +263,10 @@ main {
   object-fit: cover;
   margin-bottom: 1em;
   border: 3px solid var(--clr-primary);
+  display: block;
+  margin: 0 auto 1em auto; /* centers horizontally */
+}
+
 }
 
 
