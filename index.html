@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,15 +17,20 @@
       src="https://kit.fontawesome.com/fa62c117c7.js"
       crossorigin="anonymous"
     ></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
     <link rel="stylesheet" href="styles.css" />
     <title>Swornim Shrestha</title>
   </head>
   <body class="light" id="top">
     <header class="header center">
       <h3>
-        <a href="#home" class="link"
-          >Swornim</a
-        >
+        <a href="#home" class="link">Swornim</a>
       </h3>
 
       <nav class="nav center">
@@ -32,6 +40,9 @@
           </li>
           <li class="nav__list-item">
             <a class="link link--nav" href="#skills">Skills</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#spatial-tools">Spatial Tools</a>
           </li>
           <li class="nav__list-item">
             <a class="link link--nav" href="#contact">Contact</a>
@@ -53,21 +64,21 @@
     </header>
 
     <main>
-      <!-- About -->
-      <div class="about center">
+      <div class="about center" id="home">
+       
+        <img src="C:\Users\SWARNIM\Downloads\webgis'\webgis\WhatsApp Image 2025-07-04 at 14.58.39_a6f132f8.jpg" alt="A photo of Swornim Shrestha" class="profile-pic">
+
+
         <h1>Hi, I am <span class="about__name">Swornim Shrestha.</span></h1>
         <h2 class="about__role">Geomatics Engineering Student</h2>
         <p class="about__desc">Hi, my name is Swornim Shrestha. I'm currently a fourth-year Geomatics Engineering student.
-           I have a strong interest in spatial data analysis, mapping technologies, and infrastructure projects. 
-           I'm also learning web development through HTML, CSS, and JavaScript to expand my technical skill set. 
-           I'm eager to apply my knowledge to real-world projects and continue growing in both engineering and tech fields.
-          
-          
+          I have a strong interest in spatial data analysis, mapping technologies, and infrastructure projects.
+          I'm also learning web development through HTML, CSS, and JavaScript to expand my technical skill set.
+          I'm eager to apply my knowledge to real-world projects and continue growing in both engineering and tech fields.
         </p>
 
         <div class="about__contact center">
           <a href="https://example.com">
-            
           </a>
 
           <a
@@ -88,7 +99,6 @@
         </div>
       </div>
 
-      <!-- Projects -->
       <section id="projects" class="section projects">
         <h2 class="section__title">Projects</h2>
 
@@ -97,13 +107,7 @@
             <h3>Project 1</h3>
             <p class="project__description">
               A GIS BASED EVACUATION ROUTE PLANNING IN FLOOD-SUSCEPTIBLE AREA OF HELAMBU MUNICIPALITY, NEPAL
-              
-        
             </p>
-            
-
-           
-            
           </div>
 
           <div class="project">
@@ -111,7 +115,6 @@
             <p class="project__description">
               A REPORT ON VISIT TO SURVEY OFFICE AND LAND REGISTRY & REVENUE OFFICE OF BHAKTAPUR
             </p>
-            
           </div>
 
           <div class="project">
@@ -119,24 +122,29 @@
             <p class="project__description">
               Determining Shortest Route Using pgRouting, PostGIS, PostgreSQL and QGIS
             </p>
-            
           </div>
         </div>
       </section>
 
-      <!-- Skills -->
       <section class="section skills" id="skills">
         <h2 class="section__title">Skills</h2>
         <ul class="skills__list">
           <li class="skills__list-item btn btn--plain">HTML</li>
           <li class="skills__list-item btn btn--plain">CSS</li>
-          
           <li class="skills__list-item btn btn--plain">JavaScript</li>
-         
         </ul>
       </section>
 
-      <!-- Contact -->
+      <section class="section spatial-tools" id="spatial-tools">
+        <h2 class="section__title">Spatial Tools</h2>
+        <div id="map"></div>
+        <div class="map-buttons">
+            <button id="bufferBtn" class="btn btn--outline">Create Buffer (1km)</button>
+            <button id="measureBtn" class="btn btn--outline">Measure Distance</button>
+            <button id="areaBtn" class="btn btn--outline">Draw Polygon for Area</button>
+        </div>
+      </section>
+
       <section class="section contact center" id="contact">
         <h2 class="section__title">Contact</h2>
         <a href="mailto:swornimshrestha0720@gmail.com">
@@ -150,7 +158,7 @@
         href="https://github.com/minrows0426"
         class="link footer__link"
       >
-        Created By Swornim SHrestha
+        Created By Swornim Shrestha
       </a>
     </footer>
 
